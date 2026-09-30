@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "updatedAt": "2026-09-29",
+  "status": "beta",
+  "conduct": [
+    "Trate todos com respeito, inclusive durante erros e progressão.",
+    "Assédio, discriminação e ataques pessoais não são tolerados.",
+    "Avise ausências ou atrasos assim que possível.",
+    "Mantenha o canal de voz livre para chamadas durante encontros.",
+    "Questione decisões com calma e fora do momento de combate."
+  ],
+  "raidParticipation": [
+    "Confirme presença dentro do prazo informado pela liderança.",
+    "Esteja no local e pronto antes do horário de início.",
+    "Entre com equipamento reparado, reagentes e consumíveis.",
+    "Leia a estratégia indicada e informe dúvidas antes do pull.",
+    "Permaneça até o encerramento ou avise previamente sua limitação."
+  ],
+  "dkp": {
+    "startingBalance": 0,
+    "minimumBid": 5,
+    "earnings": [
+      {"label": "Presença e pontualidade", "points": 10},
+      {"label": "Cada chefe derrotado", "points": 5},
+      {"label": "Permanecer até o encerramento", "points": 10},
+      {"label": "Primeira derrota da guilda", "points": 10}
+    ],
+    "lootRules": [
+      "O item é anunciado e os interessados enviam um lance fechado.",
+      "Main spec tem prioridade sobre offspec.",
+      "O maior lance válido vence e é descontado do saldo.",
+      "Empate usa presença dos últimos 30 dias; persistindo, /roll.",
+      "Sem lance de main spec, offspec custa 5 DKP.",
+      "O saldo nunca pode ficar negativo.",
+      "Itens lendários, de missão ou materiais estratégicos terão regra anunciada antes da raid."
+    ],
+    "penalties": "Não há multas nesta versão. Atrasos e ausências apenas deixam de receber os bônus correspondentes.",
+    "example": [
+      {"event": "Entrada pontual", "change": "+10", "balance": "10"},
+      {"event": "Dois chefes derrotados", "change": "+10", "balance": "20"},
+      {"event": "Item vencido por lance", "change": "-15", "balance": "5"},
+      {"event": "Permanência até o fim", "change": "+10", "balance": "15"}
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "barrow-deeps",
+    "name": "Profundezas Tumulares",
+    "originalName": "Barrow Deeps",
+    "status": "confirmed",
+    "updatedAt": "2026-09-29",
+    "size": "10 jogadores",
+    "releaseDate": "09/12/2026",
+    "summary": "Uma nova raid de nível máximo nas profundezas élficas. A Blizzard confirmou oito chefes pelo sistema de Legacy, mas ainda não publicou mecânicas completas.",
+    "composition": ["2 tanks", "2 curadores", "6 DPS com boa distribuição entre corpo a corpo e distância"],
+    "preparation": ["Equipamento de nível máximo revisado", "Consumíveis para duas horas de progressão", "Reagentes de classe e espaço livre nas bolsas", "Estratégia oficial ou comunitária revisada no dia da raid"],
+    "strategy": ["Aguardando informação verificada sobre os oito encontros.", "A composição sugerida é provisória e poderá mudar com as primeiras tentativas."],
+    "videos": [{"title": "WoW: Forever — What's Next", "url": "https://www.youtube.com/watch?v=OEX-i55We5c", "source": "World of Warcraft"}],
+    "sources": [{"title": "What's Next Panel Recap", "url": "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap", "origin": "Blizzard"}, {"title": "Legacy System", "url": "https://news.blizzard.com/en-us/article/24307383/get-to-know-the-world-of-warcraft-forever-legacy-system", "origin": "Blizzard"}]
+  },
+  {
+    "slug": "hyjal-summit",
+    "name": "Pico Hyjal",
+    "originalName": "Hyjal Summit",
+    "status": "confirmed",
+    "updatedAt": "2026-09-29",
+    "size": "20 jogadores",
+    "releaseDate": "09/12/2026",
+    "summary": "Raid de 20 jogadores ambientada em uma das regiões mais importantes de Warcraft. O Legacy confirma treze chefes; detalhes de encontros permanecem em validação.",
+    "composition": ["2 a 3 tanks", "4 a 5 curadores", "12 a 14 DPS com utilidades de classe variadas"],
+    "preparation": ["Resistências específicas apenas após confirmação dos encontros", "Consumíveis completos e equipamento encantado", "Distribuição prévia de interrupções e utilidades", "Plano de substituições para uma raid de 20 jogadores"],
+    "strategy": ["Aguardando informação verificada sobre os treze encontros.", "Evitar montar exigências de resistência ou composição antes dos dados finais."],
+    "videos": [{"title": "WoW: Forever — Deep Dive", "url": "https://www.youtube.com/watch?v=nQPS_QSOYCU", "source": "World of Warcraft"}],
+    "sources": [{"title": "What's Next Panel Recap", "url": "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap", "origin": "Blizzard"}, {"title": "Legacy System", "url": "https://news.blizzard.com/en-us/article/24307383/get-to-know-the-world-of-warcraft-forever-legacy-system", "origin": "Blizzard"}]
+  },
+  {
+    "slug": "onyxia",
+    "name": "Onyxia",
+    "originalName": "Onyxia's Lair",
+    "status": "confirmed",
+    "updatedAt": "2026-09-29",
+    "size": "Tamanho em validação",
+    "releaseDate": "Disponibilidade final a confirmar",
+    "summary": "O sistema de Legacy confirma Onyxia como objetivo de raid em WoW: Forever. Tamanho, ajustes e calendário definitivo ainda precisam de publicação oficial detalhada.",
+    "composition": ["Aguardar confirmação do tamanho da raid", "Priorizar variedade de classes e utilidades", "Definir tanks e curadores somente após conhecer os ajustes"],
+    "preparation": ["Completar a cadeia de acesso caso seja exigida", "Separar consumíveis de fogo somente após confirmação", "Revisar diferenças entre Forever e versões anteriores"],
+    "strategy": ["Não reutilizar automaticamente estratégias de Classic.", "Aguardando confirmação de acesso, tamanho e alterações do encontro."],
+    "videos": [],
+    "sources": [{"title": "Legacy System", "url": "https://news.blizzard.com/en-us/article/24307383/get-to-know-the-world-of-warcraft-forever-legacy-system", "origin": "Blizzard"}]
+  }
+]
