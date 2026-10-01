@@ -1,6 +1,6 @@
 # Como manter o conteúdo do portal
 
-Este guia explica como editar classes, raids e regras sem alterar a interface. Use os arquivos JavaScript Object Notation (JSON) em `content/` como fonte principal do portal.
+Este guia explica como editar classes, raids e regras sem alterar a interface. Use os arquivos JavaScript Object Notation (JSON) em `site/data/` como fonte principal do portal.
 
 ## Entenda os estados editoriais
 
@@ -30,7 +30,7 @@ Use slugs com letras minúsculas, números e hífens. Não altere um slug public
 
 ## Edite as classes
 
-O arquivo [`content/classes.json`](../content/classes.json) contém exatamente nove classes. O tipo `ClassGuide` em [`lib/content.ts`](../lib/content.ts) define os campos aceitos.
+O arquivo [`site/data/classes.json`](../site/data/classes.json) contém exatamente nove classes. A função de validação em [`scripts/validate.mjs`](../scripts/validate.mjs) confere a quantidade e os slugs.
 
 Cada classe precisa destes grupos de dados:
 
@@ -74,7 +74,7 @@ Para macros:
 
 ## Edite as raids
 
-O arquivo [`content/raids.json`](../content/raids.json) alimenta o diretório e cada rota `/raids/[slug]`.
+O arquivo [`site/data/raids.json`](../site/data/raids.json) alimenta o diretório e cada rota `/raids/[slug]`.
 
 Cada raid precisa destes campos:
 
@@ -100,7 +100,7 @@ Prefira notícias e páginas oficiais para disponibilidade, tamanho e regras do 
 
 ## Edite regras e DKP
 
-O arquivo [`content/rules.json`](../content/rules.json) centraliza conduta, participação em raids e a política Dragon Kill Points (DKP).
+O arquivo [`site/data/rules.json`](../site/data/rules.json) centraliza conduta, participação em raids e a política Dragon Kill Points (DKP).
 
 Atualize estes campos quando a guilda refinar o sistema:
 

@@ -19,7 +19,7 @@ Evite imitar a interface do jogo. O portal deve ter identidade própria e não d
 
 ## Use o logo
 
-O arquivo principal está em [`public/brics-logo.png`](../public/brics-logo.png). O cabeçalho mostra um recorte horizontal sobre fundo marfim.
+O arquivo principal está em [`site/assets/brics-logo.png`](../site/assets/brics-logo.png). O cabeçalho mostra um recorte horizontal sobre fundo marfim.
 
 Siga estas regras:
 
@@ -29,11 +29,11 @@ Siga estas regras:
 - não altere o vermelho do traço
 - não aplique sombras, contornos ou gradientes no logo
 
-O favicon está em [`public/favicon.svg`](../public/favicon.svg). Ele usa um gesto vermelho inspirado no traço da marca.
+O favicon está em [`site/assets/favicon.svg`](../site/assets/favicon.svg). Ele usa um gesto vermelho inspirado no traço da marca.
 
 ## Use a paleta oficial
 
-Os tokens ficam em [`app/globals.css`](../app/globals.css). Use variáveis existentes antes de criar uma cor local.
+Os tokens ficam em [`site/styles.css`](../site/styles.css). Use variáveis existentes antes de criar uma cor local.
 
 | Token | Valor | Uso principal |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Não use apenas a cor para comunicar um estado. Sempre mostre o rótulo correspo
 
 ## Aplique a hierarquia tipográfica
 
-O projeto carrega duas famílias em [`app/layout.tsx`](../app/layout.tsx):
+O arquivo [`site/index.html`](../site/index.html) carrega duas famílias:
 
 - `Barlow Condensed`: títulos, números grandes e rótulos de impacto
 - `Source Sans 3`: texto, navegação, tabelas e controles
@@ -83,19 +83,18 @@ Prefira espaçamentos generosos entre seções e ritmos menores dentro de um blo
 
 Use bordas de 1 px para separar conteúdo. Cantos devem permanecer retos, salvo quando um componente acessível exigir outra forma.
 
-## Componentes compartilhados
+## Funções compartilhadas
 
-Reutilize os componentes antes de criar uma variação:
+Reutilize as funções em [`site/app.js`](../site/app.js) antes de criar uma variação:
 
-| Componente | Arquivo | Finalidade |
-| --- | --- | --- |
-| `SiteShell` | `components/site-shell.tsx` | Cabeçalho, navegação e rodapé |
-| `PageIntro` | `components/content-ui.tsx` | Título, resumo e metadados editoriais |
-| `StatusBadge` | `components/content-ui.tsx` | Estado de confiança do conteúdo |
-| `SourceLink` | `components/content-ui.tsx` | Fonte externa com indicação visual |
-| `BackLink` | `components/content-ui.tsx` | Retorno ao diretório relacionado |
+| Função | Finalidade |
+| --- | --- |
+| `pageIntro` | Título, resumo e metadados editoriais |
+| `statusBadge` | Estado de confiança do conteúdo |
+| `sourceLink` | Fonte externa com indicação visual |
+| `routeLink` | Navegação interna sem recarregar a página |
 
-Use os componentes em `components/ui/` quando houver correspondência semântica. Não altere esses arquivos para aplicar estilos de uma única página.
+Use HTML semântico para novos padrões. Mantenha comportamento em `site/app.js` e apresentação em `site/styles.css`.
 
 ## Estados editoriais
 
@@ -108,13 +107,13 @@ Os rótulos editoriais usam texto, borda e cor:
 | `community` | Opinião da comunidade | `--blue` |
 | `validating` | Em validação | Cinza quente |
 
-Use `StatusBadge` para manter os rótulos consistentes. Não crie abreviações para esses estados.
+Use `statusBadge` para manter os rótulos consistentes. Não crie abreviações para esses estados.
 
 ## Padrões de interface
 
 ### Abertura de página
 
-Comece páginas editoriais com `PageIntro`. Use um kicker curto, um título direto e uma descrição que explique a utilidade da página.
+Comece páginas editoriais com `pageIntro`. Use um kicker curto, um título direto e uma descrição que explique a utilidade da página.
 
 ### Listas de diretório
 
@@ -132,7 +131,7 @@ Os controles devem ter pelo menos 48 px de altura quando forem ações principai
 
 ### Fontes externas
 
-Mostre fontes externas com `SourceLink`. O componente abre a fonte em outra aba e inclui um ícone de saída.
+Mostre fontes externas com `sourceLink`. A função abre a fonte em outra aba e inclui um indicador de saída.
 
 ## Mantenha o movimento discreto
 

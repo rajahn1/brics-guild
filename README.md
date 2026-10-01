@@ -1,96 +1,51 @@
 # Portal da guilda BRICS
 
-Este repositório contém o portal estático da guilda BRICS para WoW: Forever. Use este guia para instalar, executar, validar e publicar o projeto.
-
-O site publicado está em [BRICS Guild](https://brics-guild.rafayuno.chatgpt.site). A publicação atual é privada.
+Este repositório contém o portal estático da guilda BRICS para WoW: Forever. O navegador executa apenas HTML, CSS e JavaScript, sem framework ou etapa de compilação.
 
 ## O que o portal contém
 
-O portal reúne informações para membros novos e experientes:
-
 - apresentação da guilda e dos seus valores
-- guia para escolher entre as nove classes
-- guias de gameplay, rotação, macros e consumíveis
+- comparação das nove classes
+- gameplay, rotações, macros e consumíveis
 - preparação e estratégias para raids
 - regras de convivência e política Dragon Kill Points (DKP)
-- fontes e estado editorial de cada informação
-
-## Pré-requisitos
-
-Instale estes programas antes de começar:
-
-- Node.js 22.13.0 ou superior
-- npm compatível com a versão instalada do Node.js
-
-Confira as versões disponíveis no computador:
-
-```bash
-node --version
-npm --version
-```
+- fontes e estados editoriais
 
 ## Como rodar localmente
 
-Siga esta sequência no diretório do projeto:
-
-1. Instale as dependências:
-
-```bash
-npm install
-```
-
-2. Inicie o ambiente de desenvolvimento:
+Instale Node.js 22 ou superior e execute:
 
 ```bash
 npm run dev
 ```
 
-3. Abra o endereço exibido no terminal.
+Abra `http://127.0.0.1:4173`. O servidor local redireciona todas as rotas para a aplicação estática.
 
-O servidor atualiza a página quando você salva um arquivo do projeto.
+## Como validar
 
-## Como validar uma alteração
-
-Gere a versão de produção antes de publicar:
+Execute a validação antes de publicar:
 
 ```bash
 npm run build
 ```
 
-O comando valida os dados e gera todas as rotas estáticas. Ele falha quando encontra slugs duplicados ou uma política DKP incompleta.
-
-Execute a versão gerada localmente quando precisar testar o Worker de produção:
-
-```bash
-npm run start
-```
-
-Use os comandos abaixo para revisar código e formatação:
-
-| Comando | Uso |
-| --- | --- |
-| `npm run lint` | Encontra problemas de código |
-| `npm run format` | Formata os arquivos suportados |
-| `npm run build` | Valida dados, rotas e artefatos de produção |
+O comando verifica arquivos obrigatórios, nove classes, slugs únicos, raids e a política DKP. Não gera arquivos novos.
 
 ## Estrutura do projeto
 
-Esta árvore mostra os diretórios que você editará com maior frequência:
-
 ```text
-app/                 Rotas e estilos globais
-components/          Componentes compartilhados
-components/ui/       Componentes de interface instalados
-content/             Classes, raids e regras em JSON
-docs/                Documentação editorial e visual
-lib/content.ts       Tipos, validações e consultas de conteúdo
-public/              Logo, favicon e arquivos públicos
-.openai/hosting.json Identificação do projeto publicado
+site/index.html       Estrutura compartilhada do portal
+site/styles.css       Design system e responsividade
+site/app.js           Roteamento e renderização das páginas
+site/assets/          Logo e favicon
+site/data/            Classes, raids e regras em JSON
+scripts/validate.mjs  Validação executada no build
+server.mjs            Servidor local com fallback de rotas
+netlify.toml           Configuração do deploy estático
+docs/                 Documentação editorial e visual
 ```
 
 ## Rotas disponíveis
-
-Use estas rotas para revisar cada área do portal:
 
 | Rota | Conteúdo |
 | --- | --- |
@@ -105,21 +60,21 @@ Use estas rotas para revisar cada área do portal:
 | `/preparacao` | Checklist geral para raids |
 | `/regras` | Conduta, participação e DKP |
 
-## Como editar o conteúdo
+## Como editar conteúdo
 
-Leia o [guia de conteúdo](docs/CONTENT_GUIDE.md) antes de alterar classes, raids ou regras. Ele explica os estados editoriais, os campos dos arquivos JSON e o processo de validação.
+Leia o [guia de conteúdo](docs/CONTENT_GUIDE.md) antes de alterar os arquivos em `site/data/`. Os valores de DKP ficam em `site/data/rules.json`.
 
-Os valores do DKP ficam em `content/rules.json`. Altere esse arquivo para atualizar regras e exemplos sem mudar componentes React.
+Consulte o [design system](docs/DESIGN_SYSTEM.md) antes de mudar `site/styles.css` ou criar um padrão visual.
 
-## Como manter o visual
+## Como publicar na Netlify
 
-Consulte o [design system](docs/DESIGN_SYSTEM.md) antes de criar páginas ou componentes. O documento registra cores, tipografia, espaçamento, padrões de interface e critérios de acessibilidade.
+Importe o repositório na Netlify e use a raiz do repositório como **Base directory**. O arquivo `netlify.toml` já define:
 
-## Como publicar
+- Build Command: `npm run build`
+- Publish directory: `site`
+- redirecionamento de todas as rotas para `site/index.html`
 
-O projeto usa Sites e mantém a identificação em `.openai/hosting.json`. Publique pelo fluxo de Sites no Codex para preservar a URL e o acesso privado.
-
-Não altere o `project_id` e não salve credenciais no repositório. A publicação precisa usar o mesmo commit validado pelo build.
+Não configure `site` como Base directory: ela é somente o diretório publicado. O redirecionamento evita erro 404 ao abrir diretamente rotas como `/regras`, `/classes/druida` ou `/raids/barrow-deeps`.
 
 ## Limites desta versão
 
